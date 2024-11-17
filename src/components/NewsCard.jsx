@@ -2,6 +2,7 @@ import { AiFillStar } from "react-icons/ai";
 import { BsShare } from "react-icons/bs";
 import { CiBookmark } from "react-icons/ci";
 import { IoEye } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const NewsCard = (props = {}) => {
     const { newsData } = props || {};
@@ -31,7 +32,7 @@ const NewsCard = (props = {}) => {
                         src={newsData.image_url}
                         alt="" />
                     <p className="text-base font-normal text-[#706F6F] mt-8">{newsData.details}</p>
-                    <button className="text-[#f36609] text-lg font-semibold">Read More</button>
+                    <Link to={`/news/${newsData._id}`} className="text-[#f36609] text-lg font-semibold">Read More</Link>
                 </div>
                 <div className="divider"></div>
                 <div className="flex justify-between items-center gap-3">
